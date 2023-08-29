@@ -6,6 +6,7 @@ FactoryBot.define do
     amount {'150000'}
   end
 
+
   
 
   factory :need do
