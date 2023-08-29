@@ -50,5 +50,4 @@ rails s
 
  - [Click here](https://app.diagrams.net/#G1Jl3P48k6znIxRqjLxHE3IZoLGKUlW_AK)
 
-![App Screenshot](https://raw.githubusercontent.com/Djira/Ne_Ka_Waris/d2b0583936f833c32fefe5e23a2b43a0c93201d3/Diag%20Trans.png)
-
+![App Screenshot](https://github.com/Djira/Ne_Ka_Waris/blob/master/doc/DiaTrans.png?raw=true)
