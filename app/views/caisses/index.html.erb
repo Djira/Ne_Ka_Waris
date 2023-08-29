@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center" >Caisses</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">#</th>
+      <th scope="col">Début </th>
+      <th scope="col">Fin </th>
+      <th scope="col"> Montant</th>
+      <th scope="col">Utilisé</th>
+      <th scope="col">Reste</th>
+      <th scope="col" colspan="3">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @caisses.each_with_index do |caiss,i| %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= caiss["start_date"] %></td>
+        <td><%= caiss["end_date"] %></td>
+        <td><%= caiss["amount"] %></td>
+        <td><%= caiss["used"] %></td>
+        <td><%= caiss["remain"] %></td>
+        <td><%= link_to 'Détails', caiss_path(caiss["id"]) %></td>
+        <td><%= link_to 'Modifier', edit_caiss_path(caiss["id"]) %></td>
+        <td><%= link_to 'Supprimer', caiss_path(caiss["id"]), method: :delete, data: { confirm: I18n.t('views.actions.confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="row">
+      <div class="col-md-2 offset-md-2">
+        <%= button_to 'Nouveau caisse', new_caiss_path, :method => "get", class:"btn btn-primary btn-lg" %>
+      </div>
+</div>
+
+

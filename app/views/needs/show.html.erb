@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @need.name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @need.amount %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @need.priority %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @need.status %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @need.caisse %>
+</p>
+
+<%= link_to 'Edit', edit_need_path(@need) %> |
+<%= link_to 'Back', needs_path %>

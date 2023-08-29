@@ -1,0 +1,55 @@
+<%= form_with(model: caiss, local: true) do |form| %>
+  <% if caiss.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(caiss.errors.count, "error") %> prohibited this caiss from being saved:</h2>
+
+      <ul>
+        <% caiss.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  
+  <div class="form-group">
+    <%= form.number_field :amount, placeholder: "Montant ", class:"form-control" %>
+  </div>
+
+  <hr>
+  <p> Faites nous une liste de vos besoins </p>
+  <%= form.fields_for :needs do |need| %>
+    <h2>Besoin<%=need.index + 1%> </h2>
+
+    <div class="form-group">
+      <%= need.text_field :name, placeholder:"Nom", class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= need.number_field :amount, placeholder:"Montant que vous voullez pour ce besoin", class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= need.select :priority, ['Très important', 'Important', 'Pas important'] %>
+    </div>
+    <% end %>
+
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+    <% if params[:id] %>
+    Mettre à jour
+    <% else %>
+    Créer 
+    <% end %>
+   <% end %>
+</form>
+<% end %>

@@ -1,0 +1,38 @@
+<div class="text-center">
+   
+      <h2>s'inscrire</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :name, class:"sr-only" %><br />
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"Name" , class:"form-control col-md-6 ml-auto mr-auto" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, class:"sr-only" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email address" , class:"form-control col-md-6 ml-auto mr-auto" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, class:"sr-only" %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password" , class:"form-control col-md-6 ml-auto mr-auto" %>
+        </div>
+
+        <div class="field mb-5">
+          <%= f.label :password_confirmation, class:"sr-only" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm Password", class:"form-control col-md-6 ml-auto mr-auto" %>
+        </div>
+
+        <div class="actions">
+        <%= f.submit "Créer ", class:"btnSubmit"%> Ou Essayer <%= link_to " utilisateur", guess_user_path, class:"ForgetPwd" %> ou <%= link_to " admin", guess_admin_path, class:"ForgetPwd" %> invité
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    
+</div>

@@ -1,0 +1,2 @@
+module CaissesHelper
+end

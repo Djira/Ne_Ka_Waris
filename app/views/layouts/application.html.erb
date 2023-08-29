@@ -1,0 +1,74 @@
+<head>
+    <title>WARI</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com' %>
+    <%= stylesheet_link_tag    'application', 'https://fonts.gstatic.com' %>
+    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css2?family=Niconne&display=swap' %>
+
+    
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body class="body">
+  <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="">WARI</a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+          <%= link_to 'Accueil', caisses_path , class:"nav-link"%>
+          </li>
+          <% if user_signed_in? %>
+          <%= link_to 'Nouveau caisse', new_caiss_path , class:"nav-link"%>
+          <% end %>
+ 
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+        <li ><a href="#" class="text-white"><span class="material-icons ">person</span> <%= link_to "Profile", show_user_path, class:"text-white" %></a></li>
+        <li><a class="text-white" href="#"><span class="material-icons">logout</span> <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "text-white" %></a></li>
+        <% else %>
+        <li class="text-white"><span class="material-icons ">person</span> <%= link_to "S'inscrire", new_user_registration_path, class:"text-white" %></li>
+        <li><a class="text-white" href="#"><span class="material-icons">login</span> <%= link_to "Connexion", new_user_session_path, class:"text-white" %></a></li>
+        <% end %>
+      </ul>
+      </div>
+    </nav>
+  </header>
+
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue bg-black ">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-black">© copyright,
+    tous droits réservés
+    </div>
+    <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+  </body>
+
+</html>

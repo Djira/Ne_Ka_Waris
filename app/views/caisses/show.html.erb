@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date début:</strong>
+  <%= @caiss.start_date %>
+</p>
+
+<p>
+  <strong>Date de fin:</strong>
+  <%= @caiss.end_date %>
+</p>
+
+<p>
+  <strong>Montant:</strong>
+  <%= @caiss.amount %>
+</p>
+<hr>
+<% if @summary.present? %>
+<p>
+  <strong>Récupitulatif de vos dépenses:</strong>
+</p>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Besoin </th>
+      <th scope="col"> Montant attribué</th>
+      <th scope="col">Montant déjà utilisé</th>
+      <th scope="col">Montant restant</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+  <% @summary.each do |need, val| %>
+    <tr>
+      <td><%= need %></td>
+      <td><%= val["give"] %></td>
+      <td><%= val["used"] %></td>
+      <td><%= val["give"] - val["used"] %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+<br>
+<div class="col-md-2 offset-md-2">
+<%= link_to 'Enregistrer une nouvelle dépense', new_expense_path(@caiss.id), :method => "get", class:"btn btn-primary btn-lg text-white" %>
+</div>
+  <% else %>
+  <p>
+  <strong>Dépenses déjà réalisées:</strong>
+ </p>
+
+  <table class="table table-hover">
+  <thead>
+    <tr>
+    <th scope="col">#</th>
+      <th scope="col">Jour </th>
+      <th scope="col">Besoin </th>
+      <th scope="col"> Montant</th>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
+      <th scope="col" colspan="3">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @caiss.expenses.each_with_index do |expense,i| %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= expense.day %></td>
+        <td><%= expense.need %></td>
+        <td><%= expense.amount %></td>
+        <td><%= expense.date %></td>
+        <td><%= expense.description %></td>
+        <td><%= link_to 'Détails', expense %></td>
+        <td><%= link_to 'Modifier', edit_expense_path(expense) %></td>
+        <td><%= link_to 'Supprimer', expense, method: :delete, data: { confirm:  I18n.t('views.actions.confirm')  } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<div class=row>
+
+<div class="col-md-2 offset-md-2">
+<%= link_to 'Enregistrer une nouvelle dépense', new_expense_path(@caiss.id), :method => "get", class:"btn btn-primary btn-lg text-white" %>
+</div>
+
+<div class="col-md-2 offset-md-2">
+<%= link_to 'Résumé de vos dépenses', caiss_path(@caiss.id, :is_resume => true), :method => "get", class:"btn btn-primary btn-lg text-white" %>
+</div>
+</div>
+<%= link_to 'Modifier', edit_caiss_path(@caiss) %> 
+<% end %>
+<%= link_to 'Retour', caisses_path %>
