@@ -40,7 +40,8 @@ rails s
 
 # Wireframe
  - [Click here](https://www.figma.com/file/asHR0WSumXOv274xiP1ism/Untitled?type=design&node-id=0-1&mode=design&t=ovqmI6CiHjbyoyi2-0)
-   ![App Screenshot]()
+
+![App Screenshot](https://github.com/Djira/Ne_Ka_Waris/blob/master/doc/wirframe.png?raw=true)
 
 ## Diagramme ER
 
