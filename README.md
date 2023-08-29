@@ -45,7 +45,7 @@ rails s
 
  - [Le lien draw.io](https://app.diagrams.net/#G1pMI8yC-Cu3V4FQpOU_ExHcAMqIS2ubuN)
 
-![App Screenshot](https://raw.githubusercontent.com/Djira/Ne_Ka_Waris/3c6978477c38efece930882be10cdeb498567b16/DER2.png)
+![App Screenshot](https://github.com/Djira/Ne_Ka_Waris/blob/master/doc/DER2.png?raw=true)
 ## Diagramme de transition d'écran 
 
  - [Click here](https://app.diagrams.net/#G1Jl3P48k6znIxRqjLxHE3IZoLGKUlW_AK)
