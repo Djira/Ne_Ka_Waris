@@ -448,7 +448,7 @@ DEPENDENCIES
   kaminari
   launchy
   letter_opener_web
-  listen (~> 3.2)
+  listen (~> 3.2, >= 3.0.5)
   mini_magick
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
