@@ -8,7 +8,7 @@ class Expense < ApplicationRecord
     validates :description, presence: true
   
     validate do |expense|
-      @caiss = Budget.find(expense.caiss_id)
+      @caiss = Caiss.find(expense.caiss_id)
       if expense.date < @caiss.start_date or expense.date > @caiss.end_date
         errors.add(:date, I18n.t('models.expense.notice'))
       end

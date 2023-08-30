@@ -30,7 +30,7 @@ fr:
       expense: dépense
       day: jour
       need: besoin
-      add_budget_name_to_expense: Ajouter nom du budget à une dépense
+      
   devise:
     confirmations:
       confirmed: Votre compte a bien été confirmé.
@@ -149,8 +149,8 @@ fr:
         other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
   views:
     messages:
-      welcome: 'Bienvenue dans Budman, votre gestionnaire de budgets!'
-      description: "Budman vous permet d'economiser votre argent. Vous pouvez journaliser vos depenses afin de mieux controler votre argent. Vous n'avez pas encore de compte?? Créez en un pour commencer l'aventure!"
+      welcome: 'Bienvenue dans Wari, votre gestionnaire de caisses!'
+      description: "Wari vous permet d'economiser votre argent. Vous pouvez journaliser vos depenses afin de mieux controler votre argent. Vous n'avez pas encore de compte?? Créez en un pour commencer l'aventure!"
     actions:
       confirm: "Cette action est irréversible. Voulez vous continuer?"      
     account:
@@ -164,6 +164,6 @@ fr:
     notice: "La date de début ne peut être une date du passé"
     notice2: "La date de fin doit être supérieure à celle de début"
     expense: 
-      notice: "La date de cette dépense ne figure pas dans la période définie pour ce budget"
+      notice: "La date de cette dépense ne figure pas dans la période définie pour ce caisse"
     dmin:
       notice: "Vous n'êtes pas autorisé à visiter cette page"

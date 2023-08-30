@@ -60,8 +60,8 @@ fr:
     actions:
       dashboard:
         title: "Administration"
-        menu: "Panneau de contrôle"
-        breadcrumb: "Panneau de contrôle"
+        menu: "Statistique"
+        breadcrumb: "Statistique"
       index:
         title: "Liste des %{model_label_plural}"
         menu: "Liste"
