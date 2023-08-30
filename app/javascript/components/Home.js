@@ -6,7 +6,7 @@ class Home extends React.Component {
   render () {
     return (
       <ReactTable
-      data={this.props.budgets}
+      data={this.props.caisses}
       columns={columns}
       defaultPageSize={10}
       className="-striped -highlight"
